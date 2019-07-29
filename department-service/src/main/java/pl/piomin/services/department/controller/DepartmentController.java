@@ -25,7 +25,7 @@ public class DepartmentController {
 	@Autowired
 	EmployeeClient employeeClient;
 	
-	@PostMapping("/")
+	@PostMapping("/", produces = "application/json", consumes = "application/json")
 	public Department add(@RequestBody Department department) {
 		LOGGER.info("Department add: {}", department);
 		return repository.add(department);
